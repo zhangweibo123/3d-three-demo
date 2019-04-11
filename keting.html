@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>three.js css3d - panorama</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+    <style>
+        body {
+            background-color: #000000;
+            margin: 0;
+            cursor: move;
+            overflow: hidden;
+        }
+        .surface { width: 1026px; height: 1026px; background-size: cover; position: absolute; }
+        .surface .bg { position: absolute; width: 1026px; height: 1026px; }
+        #kt{ position: absolute; margin:230px 0 0 400px; width: 240px;height: 260px;}
+        .on{ position: absolute; margin:340px 0 0 370px; width: 55px;height: 30px;}
+
+    </style>
+</head>
+<body>
+<div>
+    <div id="surface_0" class="surface">
+        <img class="bg" src="images/客厅.right.jpg" alt="">
+    </div>
+    <div id="surface_1" class="surface">
+        <img class="bg" src="images/客厅.left.jpg" alt="">
+    </div>
+    <div id="surface_2" class="surface">
+        <img class="bg" src="images/客厅.top.jpg" alt="">
+    </div>
+    <div id="surface_3" class="surface">
+        <img class="bg" src="images/客厅.bottom.jpg" alt="">
+    </div>
+    <div id="surface_4" class="surface">
+        <img class="bg" src="images/客厅.front.jpg" alt="">
+        <!-- <img id="kt" src="images/kt04.png" > -->
+        <!-- <img class="on" src="images/OFF.png" onclick="changeImages()"> -->
+    </div>
+    <div id="surface_5" class="surface">
+        <img class="bg" src="images/客厅.back.jpg" alt="">
+        
+    </div>
+</div>
+<script src="js/three.min.js"></script>
+<script src="js/CSS3DRenderer.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/jquery-1.11.3.js"></script>
+
+<script>
+    var b=4;//定义全局变量，否则每次点击都会从新计数
+    function changeImages(){
+        if(navigator.userAgent.indexOf('jdapp') > 0){
+
+        }
+        a=document.getElementById('kt');//获取目标Id
+        if(b<6){//图片张数，遍历每张图
+            a.src="images/kt0"+b+".png";//替换位置
+            b++;
+            }else{
+            b=4;
+            }
+        }
+</script>
+</body>
+</html>
